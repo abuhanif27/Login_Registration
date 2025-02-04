@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="bg-success">
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="card shadow p-4 text-center" style="max-width: 500px; width: 100%;">
+        <h2 id="welcomeMessage" class="mb-3"></h2>
+        <button id="logoutBtn" class="btn btn-danger">Logout</button>
+    </div>
+</div>
+
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+
+    if (!loggedInUser) {
+        window.location.href = 'index.html';
+    } else {
+        document.getElementById('welcomeMessage').textContent = 'Welcome, ' + loggedInUser.fullName;
+    }
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+        sessionStorage.removeItem('loggedInUser');
+        window.location.href = 'index.html';
+    });
+</script>
+</body>
+</html>

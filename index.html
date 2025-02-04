@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login & Registration</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="bg-primary">
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="w-100" style="max-width: 500px;">
+        <!-- Toggle Buttons -->
+        <div class="text-center mb-3">
+            <button id="showRegister" class="btn btn-light me-2">Register</button>
+            <button id="showLogin" class="btn btn-light">Login</button>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="registrationForm" class="card shadow p-4 mb-4">
+            <h2 class="card-title text-center mb-3">Register</h2>
+            <form id="registerForm">
+                <div class="mb-3">
+                    <label for="regName" class="form-label">Full Name</label>
+                    <input type="text" id="regName" class="form-control" placeholder="Enter your full name" required />
+                </div>
+                <div class="mb-3">
+                    <label for="regEmail" class="form-label">Email</label>
+                    <input type="email" id="regEmail" class="form-control" placeholder="Enter your email" required />
+                </div>
+                <div class="mb-3">
+                    <label for="regPassword" class="form-label">Password</label>
+                    <input type="password" id="regPassword" class="form-control" placeholder="Enter password" required />
+                </div>
+                <div class="mb-3">
+                    <label for="regConfirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" class="form-control" placeholder="Confirm password" required />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div id="loginForm" class="card shadow p-4" style="display: none;">
+            <h2 class="card-title text-center mb-3">Login</h2>
+            <form id="loginFormElement">
+                <div class="mb-3">
+                    <label for="loginEmail" class="form-label">Email</label>
+                    <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email" required />
+                </div>
+                <div class="mb-3">
+                    <label for="loginPassword" class="form-label">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required />
+                </div>
+                <button type="submit" class="btn btn-success w-100">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>
